@@ -6,13 +6,16 @@
   "scripts": {
     "test": "npx cypress open --e2e -b electron",
     "primerTest": "npx cypress run  --spec 'cypress/e2e/primerTest.cy.js'",
-    "prod": "npx cypress open --e2e -b electron --config baseUrl=https://pushing-front.vercel.app" ,
-    "testing": "npx cypress open --e2e -b electron --config baseUrl=https://pushing-it.vercel.app" 
+    "prod": "npx cypress open --e2e -b electron --config baseUrl=https://pushing-front.vercel.app",
+    "testing": "npx cypress open --e2e -b electron --config baseUrl=https://pushing-it.vercel.app"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "cypress": "^10.3.0"
+  },
+  "devDependencies": {
+    "cypress-xpath": "^2.0.1"
   }
 }
