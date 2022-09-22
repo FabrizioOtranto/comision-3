@@ -1,0 +1,10 @@
+{
+  "datosValidos": {
+    "usuario": "pushingit",
+    "contraseña": "123456!"
+  },
+  "datosInvalidos": {
+    "usuario": "pushingit2",
+    "contraseña": "123456!"
+  }
+}
