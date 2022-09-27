@@ -23,3 +23,7 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add("esperarMascaraDeCarga", () =>{
+    cy.get('[role="progressbar"]', {timeout:10000}).should('not.exist');
+})
