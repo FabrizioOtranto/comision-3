@@ -1,15 +1,17 @@
 /// <reference types="cypress" />
 
-describe('Esperas', () => { 
+import { timeout } from '../support/utilidades/constantes'
+
+describe('Esperas', () => {
     let datosLogin;
-    const timeout = 10000;
+
     before("before", () => {
         cy.fixture('datosUsuario').then(data => {
-         datosLogin = data
+            datosLogin = data
         })
-     });
+    });
 
-     beforeEach("beforeEach", () => {
+    beforeEach("beforeEach", () => {
         cy.visit('');
         cy.get("#registertoggle").dblclick()
         cy.get('#user').type(datosLogin.datosValidos.usuario)
@@ -20,26 +22,26 @@ describe('Esperas', () => {
         cy.get('button#wait').dblclick()
     })
 
-    xit('esperas explicitas en cypress', () =>{
+    it('esperas explicitas en cypress', () => {
         cy.wait(timeout)
         cy.get('#message').should('exist')
     })
 
-    xit('esperas utilizando timeout', () =>{
-        cy.get('#message', {timeout:timeout}).should('exist')
-    })
-  
-    xit("deberia validar el ultimo mensaje de la pagina", () =>{
-        cy.get('#message', {timeout:timeout*2}).should('have.text', 'You are a man of patience and have waited fifteen seconds')
+    it('esperas utilizando timeout', () => {
+        cy.get('#message', { timeout: timeout }).should('exist')
     })
 
-    xit("Utilizando timeouts de forma eficiente", () =>{
-        cy.get('[role="progressbar"]', {timeout:timeout}).should('not.exist')
+    it("deberia validar el ultimo mensaje de la pagina", () => {
+        cy.get('#message', { timeout: timeout * 2 }).should('have.text', 'You are a man of patience and have waited fifteen seconds')
+    })
+
+    it("Utilizando timeouts de forma eficiente", () => {
+        cy.get('[role="progressbar"]', { timeout: timeout }).should('not.exist')
         cy.get('#message').should('have.text', 'You have waited for ten seconds, CONGRATULATIONS')
     })
 
-    it("Utilizando timeouts de forma eficiente utilizando commands", () =>{
+    it("Utilizando timeouts de forma eficiente utilizando commands", () => {
         cy.esperarMascaraDeCarga()
         cy.get('#message').should('have.text', 'You have waited for ten seconds, CONGRATULATIONS')
     })
- })
+})
