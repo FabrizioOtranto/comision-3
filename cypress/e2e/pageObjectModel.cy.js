@@ -29,16 +29,12 @@ describe('Esperas', () => {
     })
 
     it("Deberia agregar 3 tareas al todo list", () => {
+        let tarea1 = 'tarea1'
         todoListPage.escribirTarea("tarea1");
         todoListPage.clickSendTaskButton();
         todoListPage.escribirTarea("tarea2");
         todoListPage.clickSendTaskButton();
-        const tarea = todoListPage.obtenerTarea('tarea1')
-        cy.log(tarea)
-        cy.wrap({text: tarea}).its('text').then(tareaTexto =>{
-            expect(tareaTexto).equal('tarea1');
-        })
-        
-        // assert.equal(todoListPage.obtenerTarea('tarea1'), 'tarea1')
-    })
-})
+        todoListPage.obtenerTarea(tarea1).should('have.text', tarea1);
+
+    });
+});

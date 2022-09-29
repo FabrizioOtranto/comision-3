@@ -13,7 +13,6 @@ export class TodoListPage {
     }
 
     obtenerTarea(tarea) {
-        return cy.contains(tarea).text()
-        
+         cy.contains(tarea)
     };
 };
