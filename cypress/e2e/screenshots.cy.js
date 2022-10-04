@@ -1,12 +1,11 @@
 /// <reference types="cypress" />
 
-import { timeout } from '../support/utilidades/constantes'
 import { LoginPage } from '../support/pages/loginPage'
 import { RegistroPage } from '../support/pages/registroPage'
 import { NavbarPage } from "../support/pages/navbarPage"
 import { TodoListPage } from "../support/pages/todoListPage"
 
-describe('Esperas', () => {
+describe('Screenshots', () => {
     let datosLogin;
     const loginPage = new LoginPage()
     const registroPage = new RegistroPage()
@@ -28,12 +27,23 @@ describe('Esperas', () => {
         cy.get('#todolistlink').click()
     })
 
-    it.only("Deberia agregar 3 tareas al todo list", () => {
+    it("Deberia tomar una foto a pantalla completa", () => {
         let tarea1 = 'tarea1'
         todoListPage.escribirTarea("tarea1");
         todoListPage.clickSendTaskButton();
         todoListPage.escribirTarea("tarea2");
         todoListPage.clickSendTaskButton();
         todoListPage.obtenerTarea(tarea1).should('have.text', tarea1);
+        cy.screenshot({capture:"fullPage"})
+    });
+
+    it("Deberia tomar una foto a la tarea 1", () => {
+        let tarea1 = 'tarea1'
+        todoListPage.escribirTarea("tarea1");
+        todoListPage.clickSendTaskButton();
+        todoListPage.escribirTarea("tarea2");
+        todoListPage.clickSendTaskButton();
+        todoListPage.obtenerTarea(tarea1).should('have.text', tarea1);
+        cy.contains(tarea1).screenshot("Tarea 1")
     });
 });

@@ -40,7 +40,7 @@ describe('Esperas', () => {
         cy.get('#message').should('have.text', 'You have waited for ten seconds, CONGRATULATIONS')
     })
 
-    it("Utilizando timeouts de forma eficiente utilizando commands", () => {
+    it.only("Utilizando timeouts de forma eficiente utilizando commands", () => {
         cy.esperarMascaraDeCarga()
         cy.get('#message').should('have.text', 'You have waited for ten seconds, CONGRATULATIONS')
     })

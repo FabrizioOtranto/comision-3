@@ -1,6 +1,6 @@
 describe('Selectores', () => { 
     
-    xit("localizando selectores con cssSelectors", () =>{
+    it("localizando selectores con cssSelectors", () =>{
         cy.visit("")
         cy.get("button").should("exist")
         cy.get('[id="user"]').should("exist")

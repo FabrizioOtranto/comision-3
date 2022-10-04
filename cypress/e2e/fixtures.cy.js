@@ -19,7 +19,7 @@ describe('Fixtures', () => {
     it("Deberia ingresar al sistema satisfactoriamente", () => {
         cy.get('#user').type(datosLogin.datosValidos.usuario)
         cy.get('#pass').type(datosLogin.datosValidos.contraseña)
-        cy.get('#submitForm').click()
+        cy.get('#submitFor').click()
         cy.xpath(`//h2[starts-with(@id,'user_${datosLogin.datosValidos.usuario}')]`).should('exist')
     })
 

@@ -18,55 +18,55 @@ describe('Aserciones', () => {
         cy.get('#waitslink').click()
     })
 
-    xit("Validar que el titulo de la pagina sea Waits usando should", () =>{
+    it("Validar que el titulo de la pagina sea Waits usando should", () =>{
         cy.get("#title").should("have.text", "Waits")
     })
 
-    xit("Validar que el titulo de la pagina sea Waits usando expect", () =>{
+    it("Validar que el titulo de la pagina sea Waits usando expect", () =>{
         cy.get("#title").invoke('text').then(titulo => {
             expect(titulo).equal('Waits')
         });
     });
 
-    xit("Validar que el titulo de la pagina sea Waits usando assert", () =>{
+    it("Validar que el titulo de la pagina sea Waits usando assert", () =>{
         cy.get("#title").invoke('text').then(titulo => {
             assert.equal(titulo, 'Waits')
         });
     });
 
-    xit("Validar la cantidad de elementos cuyo ID es title", () =>{
+    it("Validar la cantidad de elementos cuyo ID es title", () =>{
         cy.get("#title").should("have.length", 1)
     })
 
-    xit("Validar la cantidad de caracteres que tiene el titulo con should", () =>{
+    it("Validar la cantidad de caracteres que tiene el titulo con should", () =>{
         cy.get("#title").invoke('text').should("have.length", 5)
     })
 
-    xit("Validar la cantidad de caracteres que tiene el titulo con expect", () =>{
+    it("Validar la cantidad de caracteres que tiene el titulo con expect", () =>{
         cy.get("#title").invoke('text').then(titulo => {
             expect(titulo).to.have.length(5)
         });
     });
 
-    xit("Utilizando and para validar mas de una asersion en la misma sentencia",() =>{
+    it("Utilizando and para validar mas de una asersion en la misma sentencia",() =>{
         cy.get("#title").invoke('text').should("have.length", 5).and('equal', 'Waits').and('exist')
     })
 
-    xit('Validar atributos con should', () =>{
+    it('Validar atributos con should', () =>{
         cy.get("#title").should('have.attr', 'id', 'title')
     })
 
-    xit('Validar el color del titulo con should', () =>{
+    it('Validar el color del titulo con should', () =>{
         cy.get("#title").should('have.css', 'color', 'rgb(51, 255, 255)')
     })
 
-    xit('Validar el color del titulo con expect', () =>{
+    it('Validar el color del titulo con expect', () =>{
         cy.get("#title").invoke('css', 'color').then(color =>{
             expect(color).equal('rgb(51, 255, 255)')
         })
     })
 
-    xit('Validar el atributo del titulo con expect', () =>{
+    it('Validar el atributo del titulo con expect', () =>{
         cy.get("#title").invoke('attr', 'id').then(atributo =>{
             expect(atributo).equal('title')
         })
