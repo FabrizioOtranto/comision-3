@@ -1,6 +1,5 @@
 /// <reference types="cypress" />
 
-//Esto fue añadido
 
 describe('example to-do app', () => {
   beforeEach(() => {
