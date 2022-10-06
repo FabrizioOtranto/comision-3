@@ -158,7 +158,7 @@ describe('Api testing', () => {
         })
     })
 
-    it.only("Deberia agregar, actualizar, eliminar y dar error al intentar obtener el post eliminado", () => {
+    it("Deberia agregar, actualizar, eliminar y dar error al intentar obtener el post eliminado", () => {
         cy.request({
             url: "http://localhost:3000/posts/",
             method: "POST",
@@ -201,4 +201,19 @@ describe('Api testing', () => {
             })
         })
     })
-})
+
+    it.only('Deberia ingresar a pushingIT utilizando request', () => {
+        cy.request({
+            method: "POST",
+            url: "https://pushing-it-backend.herokuapp.com/api/login",
+            body: {
+                username: "pushingit",
+                password: "123456!"
+            }
+        }).then(respuesta =>{
+            window.localStorage.setItem('token', respuesta.body.token)
+            window.localStorage.setItem('user', respuesta.body.user.username)
+        })
+        cy.visit('');
+    });
+});
