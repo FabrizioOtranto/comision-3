@@ -3,8 +3,9 @@ const { defineConfig } = require("cypress");
 module.exports = defineConfig({
   e2e: {
     setupNodeEvents(on, config) {
-      // implement node event listeners here
+  experimentalSessionAndOrigin: true
     },
+    experimentalSessionAndOrigin: true,
     watchForFileChanges: false,
     defaultCommandTimeout: 3000,
     "baseUrl":"https://pushing-front.vercel.app/"
@@ -15,5 +16,5 @@ module.exports = defineConfig({
     overwrite: false,
     html: true,
     json: true
-  }
+  },
 });
