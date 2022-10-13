@@ -43,3 +43,9 @@ Cypress.Commands.add("loginWithSessions", () => {
         })
     })
 })
+Cypress.Commands.add('openEyes', (appName, testName) => {
+    cy.eyesOpen({
+        appName: appName,                       // The name of the app under test
+        testName: testName,        // The name of the test case
+    })
+})
