@@ -25,7 +25,7 @@ describe('ACME Bank', () => {
             target: 'window',
             fully: true
         });
-        let usuario = 'pushingit2'
+        let usuario = 'pushingit'
 
         // Perform login.
         cy.get('#user').type(usuario)

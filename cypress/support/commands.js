@@ -43,9 +43,20 @@ Cypress.Commands.add("loginWithSessions", () => {
         })
     })
 })
+
 Cypress.Commands.add('openEyes', (appName, testName) => {
     cy.eyesOpen({
         appName: appName,                       // The name of the app under test
         testName: testName,        // The name of the test case
     })
+
 })
+
+Cypress.Commands.add('component', (nombre) => {
+    cy.window().then($win => {
+        const component = nombre === 'root' ? $win.app : $win.app.$children.find(key => key.$vnode.tag.includes(nombre));
+
+        return component
+    })
+})
+
