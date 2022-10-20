@@ -138,3 +138,6 @@ videos/
 assets/
 
 results/
+/test-results/
+/playwright-report/
+/playwright/.cache/

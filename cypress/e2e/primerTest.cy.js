@@ -16,4 +16,5 @@ describe("Primer test", () =>{
         cy.get('#year').select(10);
         cy.get('#submitForm').click();
     });
+
 });
