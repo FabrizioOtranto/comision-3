@@ -41,11 +41,11 @@ describe("Desafio4", () => {
           })
           .then((response) => {
             cy.request({
-              url: "https://pushing-it-backend.herokuapp.com/api/deleteuser/{usuario}",
+              url: `https://pushing-it-backend.herokuapp.com/api/deleteuser/${user}`,
               method: "DELETE",
               failOnStatusCode: false,
             }).then((response) => {
-              assert.equal(response.status, 404);
+              assert.equal(response.status, 200);
               cy.log(response);
             });
           });
