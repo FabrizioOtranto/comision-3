@@ -1,6 +1,5 @@
 /// <reference types="cypress" />
 
-import { timeout } from '../support/utilidades/constantes'
 import { LoginPage } from '../support/pages/loginPage'
 import { RegistroPage } from '../support/pages/registroPage'
 import { NavbarPage } from "../support/pages/navbarPage"
@@ -34,7 +33,9 @@ describe('Esperas', () => {
         todoListPage.clickSendTaskButton();
         todoListPage.escribirTarea("tarea2");
         todoListPage.clickSendTaskButton();
-        todoListPage.obtenerTarea(tarea1).should('have.text', tarea1);
+        todoListPage.obtenerTarea(tarea1).invoke('text').then(texto =>{
+            expect(texto).equal(tarea1)
+        })
 
     });
 });
