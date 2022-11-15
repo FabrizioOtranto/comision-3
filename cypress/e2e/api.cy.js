@@ -202,7 +202,7 @@ describe('Api testing', () => {
         })
     })
 
-    it.only('Deberia ingresar a pushingIT utilizando request', () => {
+    it('Deberia ingresar a pushingIT utilizando request', () => {
         cy.request({
             method: "POST",
             url: "https://pushing-it-backend.herokuapp.com/api/login",

@@ -28,7 +28,7 @@ describe('Esperas', () => {
         cy.get('#todolistlink').click()
     })
 
-    it.only("Deberia agregar 3 tareas al todo list", () => {
+    it("Deberia agregar 3 tareas al todo list", () => {
         let tarea1 = 'tarea1'
         todoListPage.escribirTarea("tarea1");
         todoListPage.clickSendTaskButton();

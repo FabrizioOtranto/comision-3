@@ -20,18 +20,22 @@ describe('Selectores', () => {
     });
 
     it('Children', () => {
+        cy.visit("")
         cy.get("select#day").children("option[value='1']").should('exist')
     });
 
     it('parent', () => {
+        cy.visit("")
         cy.get("option[value='1']").parent("select#day").should('exist')
     });
 
     it('Siblings', () => {
+        cy.visit("")
         cy.get("input#user").siblings("label").should('exist')
     });
 
     it('Ubicando elementos por su texto', () => {
+        cy.visit("")
         cy.contains("Register")
         cy.get('button').contains("register", {matchCase:false})
     });

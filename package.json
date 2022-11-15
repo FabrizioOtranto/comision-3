@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "@applitools/eyes-cypress": "^3.27.2",
+    "@testomatio/reporter": "^0.7.1",
     "cypress-xpath": "^2.0.1",
     "mochawesome": "^7.1.3",
     "mochawesome-merge": "^4.2.1",

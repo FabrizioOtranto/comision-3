@@ -1,23 +1,17 @@
 const { defineConfig } = require("cypress");
+const testomatioReporter = require('@testomatio/reporter/lib/adapter/cypress-plugin');
 
 module.exports = defineConfig({
   e2e: {
     setupNodeEvents(on, config) {
-  experimentalSessionAndOrigin: true
+      testomatioReporter(on, config);
+      return config;
     },
     experimentalSessionAndOrigin: true,
     watchForFileChanges: false,
     defaultCommandTimeout: 3000,
     "baseUrl":"https://pushing-front.vercel.app/"
   },
-  reporter: 'mochawesome',
-  reporterOptions: {
-    reportDir: 'cypress/results',
-    overwrite: false,
-    html: true,
-    json: true
-  },
 });
-
 
 require('@applitools/eyes-cypress')(module);
