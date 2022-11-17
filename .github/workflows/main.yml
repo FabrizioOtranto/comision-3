@@ -11,6 +11,8 @@ on:
         required: false
       testomatio:
         required: false
+      tesromatio_url:
+        required: false
 
 jobs:
   build:
