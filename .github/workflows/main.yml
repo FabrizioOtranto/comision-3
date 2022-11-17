@@ -18,8 +18,6 @@ jobs:
    build:
     runs-on: windows-latest
     steps:
-    - run: npm install cypress@10.3.0 --save-dev
-    - run: npm install cypress-xpath --save-dev
     - run: npx cypress run --grep "${{ github.event.inputs.grep }}"
       env: 
         TESTOMATIO: "${{ github.event.inputs.testomatio }}"
