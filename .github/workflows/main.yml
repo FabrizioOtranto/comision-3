@@ -24,6 +24,6 @@ jobs:
       with:
         spec: cypress\e2e\**.cy.js  
     - run: npm i
-    - run: npx codeceptjs run --grep "${{ github.event.inputs.grep }}"
+    - run: npx cypress run --grep "${{ github.event.inputs.grep }}"
       env: 
         TESTOMATIO: "${{ github.event.inputs.testomatio }}"
