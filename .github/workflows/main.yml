@@ -4,14 +4,12 @@ on:
   workflow_dispatch:
     inputs:
       grep:
-        description: 'A grep '
+        description: 'tests to grep '
         required: false
         default: ''
+      run:
+        required: false
       testomatio:
-        required: false
-      browser:
-        required: false
-      run: 
         required: false
 
 jobs:
@@ -29,3 +27,4 @@ jobs:
     - run: npx cypress run --grep "${{ github.event.inputs.grep }}"
       env: 
         TESTOMATIO: "${{ github.event.inputs.testomatio }}"
+        TESTOMATIO_RUN: "${{ github.event.inputs.run }}"
