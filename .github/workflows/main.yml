@@ -18,14 +18,8 @@ jobs:
   build:
     runs-on: windows-latest
     steps:
-    - name: pushing-it
-      uses: actions/checkout@v2
-
     - name: Testomatio
       uses: cypress-io/github-action@v4
-      with:
-        spec: cypress\e2e\**.cy.js  
-    - run: npm i
     - run: npx cypress run --grep "${{ github.event.inputs.grep }}"
       env: 
         TESTOMATIO: "${{ github.event.inputs.testomatio }}"
