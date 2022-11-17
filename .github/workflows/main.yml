@@ -11,6 +11,8 @@ on:
         required: false
       browser:
         required: false
+      run: 
+        required: false
 
 jobs:
   build:
