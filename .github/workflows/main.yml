@@ -7,5 +7,7 @@ jobs:
     steps:
       - name: testomatio
         uses: cypress-io/github-action@v4
+      - uses: actions/setup-node@v3
         with:
-          spec: cypress\e2e\**.cy.js
+          node-version: 10
+          spec: cypress\e2e\**.cy.js          
