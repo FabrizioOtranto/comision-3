@@ -11,7 +11,7 @@ on:
         required: false
       testomatio:
         required: false
-      tesromatio_url:
+      testomatio_url:
         required: false
 
 jobs:
