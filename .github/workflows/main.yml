@@ -8,7 +8,7 @@ jobs:
       - name: pushing-it
         uses: actions/checkout@v2
 
-      - name: Login
+      - name: Testomatio
         uses: cypress-io/github-action@v4
         with:
           spec: cypress\e2e\**.cy.js          

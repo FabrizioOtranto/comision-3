@@ -13,6 +13,7 @@
     "cypress": "^10.3.0"
   },
   "devDependencies": {
+    "@testomatio/reporter": "^0.7.1",
     "cypress-xpath": "^2.0.1"
   }
 }
