@@ -5,9 +5,10 @@ jobs:
     name: Cypress run
     runs-on: windows-latest
     steps:
-      - name: testomatio
+      - name: pushing-it
+        uses: actions/checkout@v2
+
+      - name: Login
         uses: cypress-io/github-action@v4
-      - uses: actions/setup-node@v3
         with:
-          node-version: 10
           spec: cypress\e2e\**.cy.js          
