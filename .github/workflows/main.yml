@@ -15,12 +15,12 @@ on:
         required: false
 
 jobs:
-  build:
+   build:
     runs-on: windows-latest
     steps:
-    - name: Testomatio
-      uses: cypress-io/github-action@v4
+    - run: npm i
     - run: npx cypress run --grep "${{ github.event.inputs.grep }}"
       env: 
         TESTOMATIO: "${{ github.event.inputs.testomatio }}"
-        TESTOMATIO_RUN: "${{ github.event.inputs.run }}"
+        
+        
