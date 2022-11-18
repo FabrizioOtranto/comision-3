@@ -15,6 +15,8 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
+const cypressGrep = require('@cypress/grep')
 
+cypressGrep()
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
