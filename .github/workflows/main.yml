@@ -17,11 +17,21 @@ on:
 jobs:
    build:
     runs-on: windows-latest
+    strategy:
+      matrix:
+        node-version: [16.x]
     steps:
-    - run: npx cypress run --env --grep "${{ github.event.inputs.grep }}"
-      env: 
-        TESTOMATIO: "${{ github.event.inputs.testomatio }}"
-        TESTOMATIO_RUN: "${{ github.event.inputs.run }}"
+      - uses: actions/checkout@v2
+      - name: Setting up Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }
+      - uses: cypress-io/github-action@v4
+      - run: npx cypress run --env --grep "${{ github.event.inputs.grep }}"
+        env: 
+          TESTOMATIO: "${{ github.event.inputs.testomatio }}"
+          TESTOMATIO_RUN: "${{ github.event.inputs.run }}"
+
 
         
         
