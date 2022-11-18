@@ -20,7 +20,7 @@ describe('Fixture', () => {
         cy.get('#submitForm').click();
     });
 
-    it('Probar el login con credenciales validas 2', { tags: "@T21871c13" }, () => {
+    it('Probar el login con credenciales validas 2', { tags: "@T50f10596" }, () => {
         cy.get('#user').type(loginDatos.segundoUsuario.username);
         cy.get('#pass').type(loginDatos.segundoUsuario.password);
         cy.get('#submitForm').click();
@@ -56,7 +56,7 @@ describe('Registro fixture', () => {
         cy.get('[id="submitForm"]').click();
     })
 
-    it('Deberia registrarse correctamente', {tags: "@Tb13b4d33"}, () => {
+    it('Deberia registrarse correctamente 2', {tags: "@Tff86e86d"}, () => {
         cy.get('[name="user"]').type(`${registroData.segundoRegistro.username}${randomNum}`);
         cy.get('[id="pass"]').type(registroData.segundoRegistro.password);
         cy.get(`[value="${registroData.segundoRegistro.gender}"]`).check({ force: true });
