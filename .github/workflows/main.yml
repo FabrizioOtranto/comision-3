@@ -25,7 +25,7 @@ jobs:
       - name: Setting up Node
         uses: actions/setup-node@v1
         with:
-          node-version: ${{ matrix.node-version }
+          node-version: ${{ matrix.node-version }}
       - uses: cypress-io/github-action@v4
       - run: npx cypress run --env --grep "${{ github.event.inputs.grep }}"
         env: 
