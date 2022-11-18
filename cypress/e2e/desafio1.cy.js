@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 describe('Primer desafio', () => {
     const randomNum = Math.floor(Math.random() *1000)    
-        it('llegar a completar una tarea', () => {
+        it('llegar a completar una tarea', {tags: "@Tebbcc908"}, () => {
             let tarea = 'tarea1'
             cy.visit('');
             cy.get('[name="user"]').type(`usuario${randomNum}`);
