@@ -18,7 +18,7 @@ jobs:
    build:
     runs-on: windows-latest
     steps:
-    - run: npx codeceptjs run --env --grep "${{ github.event.inputs.grep }}"
+    - run: npx cypress run --env --grep "${{ github.event.inputs.grep }}"
       env: 
         TESTOMATIO: "${{ github.event.inputs.testomatio }}"
         TESTOMATIO_RUN: "${{ github.event.inputs.run }}"
