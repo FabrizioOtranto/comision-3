@@ -1,0 +1,10 @@
+{
+  "primerUsuario": {
+      "username": "pushingit",
+      "password": "123456!"
+  },
+  "segundoUsuario": {
+      "username": "pushingit2",
+      "password": "123456!"
+  }
+}
