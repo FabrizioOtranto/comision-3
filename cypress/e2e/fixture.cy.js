@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-describe.skip('Fixture', () => {
+describe('Fixture', () => {
     let loginDatos
 
     before('Before', () => {
@@ -14,18 +14,16 @@ describe.skip('Fixture', () => {
         cy.get('#registertoggle').dblclick();
     });
 
-    it('Probar el login con credenciales validas', () => {
+    it('Probar el login con credenciales validas', { tags: "@T21871c13" }, () => {
         cy.get('#user').type(loginDatos.primerUsuario.username);
         cy.get('#pass').type(loginDatos.primerUsuario.password);
         cy.get('#submitForm').click();
-        cy.xpath(`//h2[starts-with(@id,'user_${loginDatos.primerUsuario.username}_')]`).should('exist');
     });
 
-    it('Probar el login con credenciales validas 2', () => {
+    it('Probar el login con credenciales validas 2', { tags: "@T21871c13" }, () => {
         cy.get('#user').type(loginDatos.segundoUsuario.username);
         cy.get('#pass').type(loginDatos.segundoUsuario.password);
         cy.get('#submitForm').click();
-        cy.xpath(`//h2[starts-with(@id,'user_${loginDatos.segundoUsuario.username}_')]`).should('exist');
     });
 
     after('After', () => {
@@ -48,29 +46,27 @@ describe('Registro fixture', () => {
         cy.visit('')
     })
 
-    it('Deberia registrarse correctamente', () => {
+    it('Deberia registrarse correctamente', {tags: "@T9ff3689b"}, () => {
         cy.get('[name="user"]').type(`${registroData.primerRegistro.username}${randomNum}`);
-        cy.xpath('//input[@id="pass"]').type(registroData.primerRegistro.password);
+        cy.get('[id="pass"]').type(registroData.primerRegistro.password);
         cy.get(`[value="${registroData.primerRegistro.gender}"]`).check({ force: true });
         cy.get('#day').select(registroData.primerRegistro.day);
         cy.get('[name="month"]').select(registroData.primerRegistro.month);
         cy.get('#year').select(registroData.primerRegistro.year);
         cy.get('[id="submitForm"]').click();
-        cy.xpath(`//h2[starts-with(@id,'user_${registroData.primerRegistro.username}${randomNum}_')]`).should('exist');
     })
 
-    it('Deberia registrarse correctamente', () => {
+    it('Deberia registrarse correctamente', {tags: "@Tb13b4d33"}, () => {
         cy.get('[name="user"]').type(`${registroData.segundoRegistro.username}${randomNum}`);
-        cy.xpath('//input[@id="pass"]').type(registroData.segundoRegistro.password);
+        cy.get('[id="pass"]').type(registroData.segundoRegistro.password);
         cy.get(`[value="${registroData.segundoRegistro.gender}"]`).check({ force: true });
         cy.get('#day').select(registroData.segundoRegistro.day);
         cy.get('[name="month"]').select(registroData.segundoRegistro.month);
         cy.get('#year').select(registroData.segundoRegistro.year);
         cy.get('[id="submitForm"]').click();
-        cy.xpath(`//h2[starts-with(@id,'user_${registroData.segundoRegistro.username}${randomNum}_')]`).should('exist');
     })
 
-    afterEach("deberia modificar el numero random", () =>{
+    afterEach("deberia modificar el numero random", () => {
         randomNum = Math.floor(Math.random() * 1000)
     })
 })

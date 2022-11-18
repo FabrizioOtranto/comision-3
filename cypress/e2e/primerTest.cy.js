@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-describe("Primeros tests", () =>{
+describe("Primeros tests", {tags: "@Tf0e75fdb"}, () =>{
     const numero = Math.floor(Math.random() * 1000)
     it('Primer test', () =>{
         cy.visit('');
