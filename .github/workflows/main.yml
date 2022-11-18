@@ -27,7 +27,8 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - uses: cypress-io/github-action@v4
-      - run: npx cypress run --env --grep "${{ github.event.inputs.grep }}"
+        with:
+          command: npx cypress run --env --grep "${{ github.event.inputs.grep }}"
         env: 
           TESTOMATIO: "${{ github.event.inputs.testomatio }}"
           TESTOMATIO_RUN: "${{ github.event.inputs.run }}"
