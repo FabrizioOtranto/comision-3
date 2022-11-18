@@ -14,13 +14,13 @@ describe('Fixture', () => {
         cy.get('#registertoggle').dblclick();
     });
 
-    it('Probar el login con credenciales validas', { tags: "@T21871c13" }, () => {
+    it('Probar el login con credenciales validas', () => {
         cy.get('#user').type(loginDatos.primerUsuario.username);
         cy.get('#pass').type(loginDatos.primerUsuario.password);
         cy.get('#submitForm').click();
     });
 
-    it('Probar el login con credenciales validas 2', { tags: "@T50f10596" }, () => {
+    it('Probar el login con credenciales validas 2', () => {
         cy.get('#user').type(loginDatos.segundoUsuario.username);
         cy.get('#pass').type(loginDatos.segundoUsuario.password);
         cy.get('#submitForm').click();
@@ -46,7 +46,7 @@ describe('Registro fixture', () => {
         cy.visit('')
     })
 
-    it('Deberia registrarse correctamente', {tags: "@T9ff3689b"}, () => {
+    it('Deberia registrarse correctamente', () => {
         cy.get('[name="user"]').type(`${registroData.primerRegistro.username}${randomNum}`);
         cy.get('[id="pass"]').type(registroData.primerRegistro.password);
         cy.get(`[value="${registroData.primerRegistro.gender}"]`).check({ force: true });
@@ -56,7 +56,7 @@ describe('Registro fixture', () => {
         cy.get('[id="submitForm"]').click();
     })
 
-    it('Deberia registrarse correctamente 2', {tags: "@Tff86e86d"}, () => {
+    it('Deberia registrarse correctamente 2', () => {
         cy.get('[name="user"]').type(`${registroData.segundoRegistro.username}${randomNum}`);
         cy.get('[id="pass"]').type(registroData.segundoRegistro.password);
         cy.get(`[value="${registroData.segundoRegistro.gender}"]`).check({ force: true });

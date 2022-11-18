@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 describe('Selectores', () =>{
 
-    it("Encontrar elementos web utilizando cssSelector", {tags: "@Tfc6e4388"},() =>{
+    it("Encontrar elementos web utilizando cssSelector",() =>{
         cy.visit('')
         cy.get('button').should('exist')
         cy.get('input').should('exist')
