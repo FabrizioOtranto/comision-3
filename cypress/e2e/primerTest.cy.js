@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 describe("Primeros tests", () =>{
     const numero = Math.floor(Math.random() * 1000)
-    it('Primer test', {tags: "@T3cc22562"}, () =>{
+    it('Primer test', () =>{
         cy.visit('');
         cy.get('#user').type(`pushingit${numero}`);
         cy.get('#user').clear()
