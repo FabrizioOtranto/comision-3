@@ -1,6 +1,6 @@
-describe('Desafio4', () => { 
+// describe('Desafio4', () => { 
 
-    it("Deberia registarse, ingresar y luego eliminar el usuario", () =>{
+//     it("Deberia registarse, ingresar y luego eliminar el usuario", () =>{
         
-    })
- })
+//     })
+//  })
